@@ -129,6 +129,341 @@ section{
 }
 
 
+/* Animated architect house - from left */
+.architect-house{
+  position:absolute;
+  bottom:80px;
+  left:-120px;
+  z-index:4;
+  animation:houseMoveLR 12s linear infinite;
+}
+
+@keyframes houseMoveLR{
+  0%{left:-120px;transform:translateY(0) rotate(0deg);}
+  10%{transform:translateY(-15px) rotate(-3deg);}
+  20%{transform:translateY(0) rotate(0deg);}
+  30%{transform:translateY(-20px) rotate(3deg);}
+  40%{transform:translateY(0) rotate(0deg);}
+  50%{left:50%;transform:translateY(-15px) rotate(-2deg);}
+  60%{transform:translateY(0) rotate(0deg);}
+  70%{transform:translateY(-18px) rotate(2deg);}
+  80%{transform:translateY(0) rotate(0deg);}
+  90%{transform:translateY(-12px) rotate(-1deg);}
+  100%{left:calc(100% + 120px);transform:translateY(0) rotate(0deg);}
+}
+
+/* Bridge - from right to left */
+.architect-bridge{
+  position:absolute;
+  bottom:120px;
+  right:-150px;
+  z-index:4;
+  animation:bridgeMoveRL 16s linear infinite 3s;
+}
+
+@keyframes bridgeMoveRL{
+  0%{right:-150px;transform:translateY(0) rotate(0deg);}
+  8%{transform:translateY(-12px) rotate(2deg);}
+  16%{transform:translateY(0) rotate(0deg);}
+  28%{transform:translateY(-18px) rotate(-2deg);}
+  40%{transform:translateY(0) rotate(0deg);}
+  52%{transform:translateY(-10px) rotate(1deg);}
+  64%{transform:translateY(0) rotate(0deg);}
+  76%{transform:translateY(-15px) rotate(-1deg);}
+  88%{transform:translateY(0) rotate(0deg);}
+  100%{right:calc(100% + 150px);transform:translateY(0) rotate(0deg);}
+}
+
+.bridge-body{
+  width:120px;
+  height:15px;
+  background:linear-gradient(135deg,#9B30FF 0%,#7B20DD 100%);
+  border-radius:3px;
+  position:relative;
+  box-shadow:0 6px 18px rgba(155,48,255,0.4);
+}
+
+.bridge-arch{
+  position:absolute;
+  bottom:100%;
+  width:20px;
+  height:20px;
+  border:3px solid #FFD600;
+  border-top:none;
+  border-radius:0 0 50% 50%;
+}
+
+.ba1{left:10px;}
+.ba2{left:50px;}
+.ba3{left:90px;}
+
+.bridge-cable{
+  position:absolute;
+  width:2px;
+  height:30px;
+  background:rgba(255,255,255,0.6);
+  top:-30px;
+}
+
+.bc1{left:20px;}
+.bc2{left:40px;}
+.bc3{left:60px;}
+.bc4{left:80px;}
+.bc5{left:100px;}
+
+/* Apartment building - from left to right diagonal */
+.architect-apartment{
+  position:absolute;
+  bottom:60px;
+  left:-130px;
+  z-index:4;
+  animation:apartmentMoveDiag 18s linear infinite 6s;
+}
+
+@keyframes apartmentMoveDiag{
+  0%{left:-130px;bottom:60px;transform:translateY(0) rotate(0deg);}
+  12%{transform:translateY(-22px) rotate(-3deg);}
+  24%{transform:translateY(0) rotate(0deg);}
+  36%{transform:translateY(-28px) rotate(3deg);}
+  48%{transform:translateY(0) rotate(0deg);bottom:90px;}
+  60%{transform:translateY(-20px) rotate(-2deg);}
+  72%{transform:translateY(0) rotate(0deg);}
+  84%{transform:translateY(-25px) rotate(2deg);}
+  100%{left:calc(100% + 130px);bottom:120px;transform:translateY(0) rotate(0deg);}
+}
+
+.apartment-body{
+  width:65px;
+  height:90px;
+  background:linear-gradient(135deg,#00d4ff 0%,#0099cc 100%);
+  border-radius:6px 6px 2px 2px;
+  position:relative;
+  box-shadow:0 8px 20px rgba(0,212,255,0.4);
+}
+
+.apartment-window{
+  position:absolute;
+  width:10px;
+  height:12px;
+  background:rgba(255,255,255,0.85);
+  border:1px solid #333;
+}
+
+.aw1{top:8px;left:8px;}
+.aw2{top:8px;right:8px;}
+.aw3{top:28px;left:8px;}
+.aw4{top:28px;right:8px;}
+.aw5{top:48px;left:8px;}
+.aw6{top:48px;right:8px;}
+.aw7{top:68px;left:8px;}
+.aw8{top:68px;right:8px;}
+
+.apartment-roof{
+  position:absolute;
+  top:-12px;
+  left:0;
+  width:100%;
+  height:12px;
+  background:#E8002D;
+  border-radius:3px 3px 0 0;
+}
+
+/* Tower - from right, high arc */
+.architect-tower{
+  position:absolute;
+  bottom:50px;
+  right:-100px;
+  z-index:4;
+  animation:towerMoveArc 20s ease-in-out infinite 9s;
+}
+
+@keyframes towerMoveArc{
+  0%{right:-100px;bottom:50px;transform:translateY(0) rotate(0deg);}
+  10%{transform:translateY(-35px) rotate(-4deg);}
+  20%{transform:translateY(-10px) rotate(0deg);bottom:150px;}
+  30%{transform:translateY(-40px) rotate(4deg);}
+  40%{transform:translateY(-5px) rotate(0deg);}
+  50%{right:50%;bottom:180px;transform:translateY(-30px) rotate(-3deg);}
+  60%{transform:translateY(-8px) rotate(0deg);}
+  70%{transform:translateY(-38px) rotate(3deg);bottom:120px;}
+  80%{transform:translateY(-12px) rotate(0deg);}
+  90%{transform:translateY(-28px) rotate(-2deg);}
+  100%{right:calc(100% + 100px);bottom:60px;transform:translateY(0) rotate(0deg);}
+}
+
+.tower-body{
+  width:50px;
+  height:120px;
+  background:linear-gradient(135deg,#FFD600 0%,#FFA500 100%);
+  border-radius:8px 8px 4px 4px;
+  position:relative;
+  box-shadow:0 10px 25px rgba(255,214,0,0.4);
+}
+
+.tower-window{
+  position:absolute;
+  width:8px;
+  height:10px;
+  background:rgba(0,0,0,0.7);
+  border:1px solid #333;
+}
+
+.tw1{top:10px;left:10px;}
+.tw2{top:10px;right:10px;}
+.tw3{top:30px;left:10px;}
+.tw4{top:30px;right:10px;}
+.tw5{top:50px;left:10px;}
+.tw6{top:50px;right:10px;}
+.tw7{top:70px;left:10px;}
+.tw8{top:70px;right:10px;}
+.tw9{top:90px;left:10px;}
+.tw10{top:90px;right:10px;}
+
+.tower-spire{
+  position:absolute;
+  top:-25px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:0;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  border-bottom:30px solid #E8002D;
+}
+
+/* Slow confetti in hero section */
+.hero-confetti{
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:#FFD600;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:0;
+  animation:slowConfettiFall var(--fall-duration,8s) linear infinite;
+  animation-delay:var(--fall-delay,0s);
+  left:var(--fall-x,50%);
+  top:-20px;
+  z-index:2;
+}
+
+@keyframes slowConfettiFall{
+  0%{
+    opacity:0;
+    transform:translateY(0) rotate(0deg);
+  }
+  10%{
+    opacity:0.8;
+  }
+  90%{
+    opacity:0.6;
+  }
+  100%{
+    opacity:0;
+    transform:translateY(100vh) rotate(360deg);
+  }
+}
+
+.hc-red{background:#E8002D;}
+.hc-yellow{background:#FFD600;}
+.hc-purple{background:#9B30FF;}
+.hc-cyan{background:#00FFD1;}
+.hc-white{background:rgba(255,255,255,0.7);}
+
+.house-body{
+  width:70px;
+  height:70px;
+  background:linear-gradient(135deg,#E8002D 0%,#C4001F 100%);
+  border-radius:8px;
+  position:relative;
+  box-shadow:0 8px 20px rgba(232,0,45,0.4);
+}
+
+.house-roof{
+  position:absolute;
+  top:-35px;
+  left:-10px;
+  width:0;
+  height:0;
+  border-left:45px solid transparent;
+  border-right:45px solid transparent;
+  border-bottom:40px solid #FFD600;
+  filter:drop-shadow(0 4px 12px rgba(255,214,0,0.5));
+}
+
+.house-window{
+  position:absolute;
+  width:15px;
+  height:15px;
+  background:rgba(255,255,255,0.9);
+  border:2px solid #333;
+  animation:windowBlink 1.5s ease-in-out infinite;
+}
+
+.hw1{top:12px;left:12px;}
+.hw2{top:12px;right:12px;}
+.hw3{bottom:20px;left:12px;}
+.hw4{bottom:20px;right:12px;}
+
+@keyframes windowBlink{
+  0%,100%{background:rgba(255,255,255,0.9);}
+  50%{background:rgba(255,214,0,0.6);}
+}
+
+.house-door{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:20px;
+  height:28px;
+  background:#333;
+  border-radius:4px 4px 0 0;
+}
+
+.house-chimney{
+  position:absolute;
+  top:-20px;
+  right:8px;
+  width:12px;
+  height:25px;
+  background:#8a7060;
+  border-radius:2px 2px 0 0;
+}
+
+.house-smoke{
+  position:absolute;
+  bottom:100%;
+  left:50%;
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,0.5);
+  border-radius:50%;
+  animation:smokeRise 1.8s ease-out infinite;
+}
+
+@keyframes smokeRise{
+  0%{transform:translate(-50%,0) scale(0.8);opacity:0.7;}
+  100%{transform:translate(-50%,-30px) scale(1.5);opacity:0;}
+}
+
+.house-label{
+  position:absolute;
+  bottom:-25px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'Rajdhani',sans-serif;
+  font-size:9px;
+  color:rgba(255,255,255,0.7);
+  white-space:nowrap;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  background:rgba(0,0,0,0.3);
+  padding:2px 6px;
+  border-radius:3px;
+}
+
+
 
 #levi{
   background:linear-gradient(180deg,#0a0a18 0%,#0d0d22 100%);
@@ -429,6 +764,100 @@ section{
 
   <div class="hero-content">
     <div class="hero-hb">Happy Birthday</div>
+
+<!-- Animated architect house -->
+<div class="architect-house">
+  <div class="house-body">
+    <div class="house-roof"></div>
+    <div class="house-chimney">
+      <div class="house-smoke"></div>
+    </div>
+    <div class="house-window hw1"></div>
+    <div class="house-window hw2"></div>
+    <div class="house-window hw3"></div>
+    <div class="house-window hw4"></div>
+    <div class="house-door"></div>
+  </div>
+  <div class="house-label">Architect Mode</div>
+</div>
+
+<!-- Animated bridge -->
+<div class="architect-bridge">
+  <div class="bridge-body">
+    <div class="bridge-arch ba1"></div>
+    <div class="bridge-arch ba2"></div>
+    <div class="bridge-arch ba3"></div>
+    <div class="bridge-cable bc1"></div>
+    <div class="bridge-cable bc2"></div>
+    <div class="bridge-cable bc3"></div>
+    <div class="bridge-cable bc4"></div>
+    <div class="bridge-cable bc5"></div>
+  </div>
+</div>
+
+<!-- Animated apartment -->
+<div class="architect-apartment">
+  <div class="apartment-body">
+    <div class="apartment-roof"></div>
+    <div class="apartment-window aw1"></div>
+    <div class="apartment-window aw2"></div>
+    <div class="apartment-window aw3"></div>
+    <div class="apartment-window aw4"></div>
+    <div class="apartment-window aw5"></div>
+    <div class="apartment-window aw6"></div>
+    <div class="apartment-window aw7"></div>
+    <div class="apartment-window aw8"></div>
+  </div>
+</div>
+
+<!-- Animated tower -->
+<div class="architect-tower">
+  <div class="tower-body">
+    <div class="tower-spire"></div>
+    <div class="tower-window tw1"></div>
+    <div class="tower-window tw2"></div>
+    <div class="tower-window tw3"></div>
+    <div class="tower-window tw4"></div>
+    <div class="tower-window tw5"></div>
+    <div class="tower-window tw6"></div>
+    <div class="tower-window tw7"></div>
+    <div class="tower-window tw8"></div>
+    <div class="tower-window tw9"></div>
+    <div class="tower-window tw10"></div>
+  </div>
+</div>
+
+<!-- Slow falling confetti -->
+<div class="hero-confetti hc-red" style="--fall-x:15%;--fall-duration:10s;--fall-delay:0s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:28%;--fall-duration:12s;--fall-delay:1.5s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:45%;--fall-duration:11s;--fall-delay:3s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:62%;--fall-duration:13s;--fall-delay:2s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:78%;--fall-duration:10.5s;--fall-delay:4s;"></div>
+<div class="hero-confetti hc-red" style="--fall-x:35%;--fall-duration:11.5s;--fall-delay:5.5s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:52%;--fall-duration:12.5s;--fall-delay:1s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:68%;--fall-duration:10s;--fall-delay:3.5s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:22%;--fall-duration:13.5s;--fall-delay:6s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:85%;--fall-duration:11s;--fall-delay:2.5s;"></div>
+<div class="hero-confetti hc-red" style="--fall-x:40%;--fall-duration:12s;--fall-delay:4.5s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:58%;--fall-duration:10.5s;--fall-delay:0.5s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:10%;--fall-duration:13s;--fall-delay:7s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:72%;--fall-duration:11.5s;--fall-delay:1.8s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:48%;--fall-duration:12s;--fall-delay:5s;"></div>
+<div class="hero-confetti hc-red" style="--fall-x:90%;--fall-duration:10.5s;--fall-delay:3.2s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:18%;--fall-duration:13.5s;--fall-delay:8s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:55%;--fall-duration:11s;--fall-delay:2.8s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:33%;--fall-duration:12.5s;--fall-delay:6.5s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:75%;--fall-duration:10s;--fall-delay:4.2s;"></div>
+<div class="hero-confetti hc-red" style="--fall-x:8%;--fall-duration:11.5s;--fall-delay:1.2s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:65%;--fall-duration:13s;--fall-delay:7.5s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:42%;--fall-duration:12s;--fall-delay:3.8s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:82%;--fall-duration:11s;--fall-delay:5.5s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:25%;--fall-duration:10.5s;--fall-delay:0.8s;"></div>
+<div class="hero-confetti hc-red" style="--fall-x:50%;--fall-duration:13.5s;--fall-delay:9s;"></div>
+<div class="hero-confetti hc-yellow" style="--fall-x:12%;--fall-duration:12.5s;--fall-delay:2.2s;"></div>
+<div class="hero-confetti hc-purple" style="--fall-x:70%;--fall-duration:11.5s;--fall-delay:6.8s;"></div>
+<div class="hero-confetti hc-cyan" style="--fall-x:38%;--fall-duration:10s;--fall-delay:4.5s;"></div>
+<div class="hero-confetti hc-white" style="--fall-x:88%;--fall-duration:12s;--fall-delay:1.5s;"></div>
     <div class="hero-name">
       <span class="hero-name-inner">Rachel</span>
     </div>
