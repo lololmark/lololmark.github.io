@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unwritten Destiny — Sungai Gisir Community Library · Rachel Chong Xin Jie</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    /* Masonry-style gallery for the large image set */
+    .gallery-grid-large {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .gallery-grid-large .gallery-item:nth-child(4n+1) {
+      grid-column: span 2;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid-large { grid-template-columns: 1fr; }
+      .gallery-grid-large .gallery-item:nth-child(4n+1) { grid-column: span 1; }
+    }
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .gallery-grid-large { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid-large .gallery-item:nth-child(4n+1) { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="binary-canvas"></canvas>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">R.C.X.J</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="index.html#drawings">Drawings</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="projects.html">← All Projects</a>
+      <span class="breadcrumb-sep">·</span>
+      <a href="index.html">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <section class="project-hero">
+    <img class="project-hero-bg"
+      src="https://lh3.googleusercontent.com/sitesv/AA5AbUDe2M58Y_vIqZi1OD1EgMocrPyXwCIT0Of7X6crawQDq6NoRcAf2OdIpW_rBaF6PSRHseme8hADdsy5YEnkI6G9AeJei5YA-eleGe9Zv3qO3chtYW5ZvfBg05xMl41bWqxLnwjEduktQol7I91iRzC3IRZJ-SbDtbQWo5AsUGoYk1bx0BCBCKx0UrT7kMcQgexmREZjQkLjV1bAhC0Z3XgkmPWGlKR19VdR=w1280"
+      alt="Unwritten Destiny — Sungai Gisir Community Library">
+    <div class="project-hero-overlay"></div>
+    <div class="project-hero-content">
+      <span class="project-hero-tag">Y2S3 · Project 2 · Community Library</span>
+      <h1 class="project-hero-title">Unwritten Destiny</h1>
+      <p class="project-hero-sub">Sungai Gisir Community Library · Lembah Keramat</p>
+    </div>
+  </section>
+
+  <div class="project-meta-bar">
+    <div class="project-meta-inner">
+      <div class="meta-item"><span class="meta-key">Year</span><span class="meta-val">Year 2</span></div>
+      <div class="meta-item"><span class="meta-key">Semester</span><span class="meta-val">Semester 3</span></div>
+      <div class="meta-item"><span class="meta-key">Type</span><span class="meta-val">Community Library</span></div>
+      <div class="meta-item"><span class="meta-key">Course</span><span class="meta-val">Design Studio VI</span></div>
+      <div class="meta-item"><span class="meta-key">Location</span><span class="meta-val">Lembah Keramat, KL</span></div>
+      <div class="meta-item"><span class="meta-key">Site</span><span class="meta-val">Beside Sungai Gisir</span></div>
+    </div>
+  </div>
+
+  <div class="project-description">
+    <div class="project-description-inner">
+      <span class="desc-label reveal">Description</span>
+      <div class="desc-body reveal stagger-2">
+        <p>Unwritten Destiny Library is a community hub in the heart of Lembah Keramat, beside Sungai Gisir, providing spaces for reading, learning, and social interaction. Its design connects the community to the riverfront and surrounding streets.</p>
+        <p>The library is organised around a central atrium that draws the river's presence — light, sound, seasonal flood levels — into the building's core. Reading rooms step outward toward the riverbank, while community spaces open onto the adjacent street, creating a building that is simultaneously inward and engaged.</p>
+        <p>The name reflects the idea that every visitor can shape their own journey of discovery, making each experience unique. The spatial sequence offers no singular path; instead, a network of routes, terraces, and thresholds allows the building to mean different things to different people at different times.</p>
+        <p>Material choices respond to the tropical climate: deep overhangs shade the reading rooms, louvred walls allow cross-ventilation, and a planted roof terrace returns green space to the riverbank corridor.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-gallery">
+    <div class="gallery-inner">
+      <div class="gallery-section-label reveal">Project Images</div>
+      <div class="gallery-grid-large">
+
+        <div class="gallery-item reveal stagger-1">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDe2M58Y_vIqZi1OD1EgMocrPyXwCIT0Of7X6crawQDq6NoRcAf2OdIpW_rBaF6PSRHseme8hADdsy5YEnkI6G9AeJei5YA-eleGe9Zv3qO3chtYW5ZvfBg05xMl41bWqxLnwjEduktQol7I91iRzC3IRZJ-SbDtbQWo5AsUGoYk1bx0BCBCKx0UrT7kMcQgexmREZjQkLjV1bAhC0Z3XgkmPWGlKR19VdR=w1280" alt="Unwritten Destiny — 01" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-2">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAvqhGoFbZYhbhSd_S_rcxVE5EulMTnycWHSV8mwOLmyS6BkFfFsa7JkG4B4e2HxJHvsDIpAxo8tXpc6nNHIZ-Oc40nOKlfIZNoWrw6XYoftaIIGE-M76BAKkzjDaPSvESi1WdJh_8ErZURHScihSJFsK_lGzd4kKxbWXMm3oDyqIMRP4QEj2dNKcTQtvcjG4W8-waEMtHzXxjDJjcgFYUT3axyV9fQVPvxtsA=w1280" alt="Unwritten Destiny — 02" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-3">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCYzE_MotkDPX-8p-dIdpzlF3d8-xLJejWYKFifST9hzQocDRFJ_P6TJ1TE8Zt2yZgcuGWGh1kQGK-y87QQehhfV1C-uhypdLBpZ2mxV9I_09kuyzpBKvnelk1eqxHBmdtWdRBbPFg_hs8bncIp9g1aQzc6wsmqbEm5uhwk819CTbGU-UaIiukgX638ZGn_DYAkImo9IAkyy_AREN-Reyn_v_wLsDkt-vQJpQU=w1280" alt="Unwritten Destiny — 03" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-4">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUA3JpSfXDmZrp7pdOL76mfb-aPU1-sEZ-I-aPgJ2Kr4p7Qsge04gEWg0WCCuYzU6sHuinFEEGvPk2LxanMvtKs7AIuLmShv7lFwuQCnGbgMtOQ5FpjzdAlyYMDN6CJc_iVJ9ME0EfefJC71zRcRZ3WSDWAJqXR-xwNbKwTV4qG65KJE7gbFhKA9rMkd3OxbZLOj-prbJ5UXAhClN6W9PcHJtw2zI-PuaZzIuDI=w1280" alt="Unwritten Destiny — 04" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-5">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAEs2v6w_z87ghcJuDf_s9YZlSU1iqE5iksEv5zQBSk7ssWIZUIsSC5diV0uOIFJHaLEL-mjlT5euWzGmoJFtMGE5mYbvcA5WxqX4jKZjjuUfPnV-aYFi9hD7q7A8-SEjcSDjiCom49TPBE_WPbMENDuwJJFdTNYG-QKfNNwuxWcwTTFflUlHieSgsWH2_U3NwalXoVNkW7L8l_Iq7J_fo78Zfs3ZtiMU7O=w1280" alt="Unwritten Destiny — 05" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-6">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDV22f8HUUYJzj2t0uySMP1ARKe7qmrMaptNZsiFLL5P9LqB1FhzssSEu8gjq0bTkkUCKuYPOz5h8Uq3r248Nhxh1_4CyWtrNu7g-7HGJNoVj2e0UbOHucSDA63uqw_AOB_N4Bm5eqfKzUB_YUzKYR3NoiIEK1Z_VvTDBxVgFxUjwMgsMEkctH5_IGB63POcs4Lk2hlEB3E1kYKR9V2g1U5ep1tQqGb4j_99sI=w1280" alt="Unwritten Destiny — 06" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-1">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAQfvOM4DbEgT8x8RP-cEg_4rkGKIBtaJWQyoPNuIzWMiTCe5_yW7OoV7i-60pBg4Db6GsnLAZ-nE7AJRUl75vAiXbNozI40f2CLjs4HHQ3gLaw0nYu9LRFOyIi5ihlh4wWVDb4AEFsVB3ebYiEzY6W5OcQ-WXTSwuSU5JUcOWaBUsBn6ftOkKAjEeG1q2vNz9Rl-jcuzI-D5uJrPsgWwYRjmzG7cQ32A1F=w1280" alt="Unwritten Destiny — 07" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-2">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDxSyR64qtzhvmGt0xzMk2s6Us3adcamRk8Gj6SywMzBFSqQyKgyTrGfLxnVtV0OIuNCnuP5o3tK3hW3d40ab32Ew3YJEkvtazQXK8xuU8pWF7uuMQlIfCvajD3QvDYECULdzQ0V2pKJpg702d5x8Qd3s3Evfmb8zp3ltf95b2rCLhX93HLoHKxfWKa5by2yZXZCO_RkVcQ0XV0BYVRQYvTjVzwZko2dvou=w1280" alt="Unwritten Destiny — 08" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-3">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUD69w7yQYcn85JzsnGikAzB6_dtwrQ4r-rlpYQ5O-UbqwkxMm6CL94nBBtEHm11SAuj_XTXGTFYrpWJNPIdfmpvmGWuwFdpGrG3BPK4pAN_XyxRNwjwbwpZmADaofZkTU6yAEvrInEBgyPSGCQnpN92phTb2b2gt7H0HptCrGFdYc8WECio90xwaM2J7zoSifotlIY1kO1Dac4e9SlEruE91J7gS98JfyW4=w1280" alt="Unwritten Destiny — 09" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-4">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUBXmysW84yGLhllfJu2hqUQG-2m6Jkboq7DTvRcx8W-eUeTQV2FpLus5EUQRR0ZVrKXj1qcb55GEFHHiPeNGzP-pDaMAClLvN7jDiya7A7gwomdZfBU1BwUgNkFhNl5IIKeYHcsMr_7UPgMdFRuW34Gg6S9ll-NLXssRjjZPVDmW6dvgQWTL6vw4D0DzH0ayoHZA2eWGXE3Wxc6W0DdiIqibekYwitxKd5mi48=w1280" alt="Unwritten Destiny — 10" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-5">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCFwTHgrgsELMpd3ybXM12dPPlZL0abpmwK5d307-vqkbh6vuIlDMFd2EZ7fk5LjhqUc0cFLxTx7Kh8UEdiWriLau6aKtsfM8d_X6GgYYRLbG2I31s-80gm_H0dH0LyTAvzyxC1qNFjYJyh3i--GNgMysuaNhHlVae1LZoBeOWgJWvTDKI0XZbtRkQ7GGnchDGH2il70cfMTF0FxllVpg8py0h5K7x96AvkyNg=w1280" alt="Unwritten Destiny — 11" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-6">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDpiT9XCWWqZ5V7_xODznS60ZPQZytfKDHwvy90ABBtixc6t24eoOUNO8HhExjcGu6FidX3Y47c94GI6InoAeqdfyz6_lBNB-gJvqvZ8CzYWZ6jyo3F-RkdimaF7lB1g7wK4-Ua91tBojOdfKqvAJQc4cuUZdPOCbIDBnw12ILPX0ND1cfTfe_mC7KoUKA1l0MpzDPgouHfiYWGfqPBFvVlW5WU6YmAK59I=w1280" alt="Unwritten Destiny — 12" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-1">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUBuL9ldoQfMaN_9QeeN-NiOYfSFwEOKHB5dhS0PcLeMca8yJ_GzQ-CxfdxHsv2CBiISx5OOHLrVmkQ8BVr_BMaNniLdhD-lfdBcPDVYSYKwqVkDDloTB3NMI_uCzhqoyYBiB8TzsBsi7YLWWHrq1oX0vgjsG8iHljLMyhRLzSX-6z81RX5sYmhQ-qYYOaP3SUShasxa5s5fyaU-DyC2oeJ-FlkUwdrAYT2FKto=w1280" alt="Unwritten Destiny — 13" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-2">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUB67jPawkXGXMH6zCSdGLvZG-tH6MDvx7zyjlltTxz7rqgEpuUtfnV0wiPB-j7Rpnesc1URdd2B8zgpEVAcbAWzx_EfSwbqPx3LsRGzJ9-Gd_QvJ2awSPQL5yrsB_ptLv-LVPsPZ9TBA_S-sk8tLHn8RLiJcNZmoAlXAeeo-ot1hp3f7bvTq9q_gxewd_Kddphxm0_HJqej5pqqBFbTEghUMLSGnAkGbZ9lyaA=w1280" alt="Unwritten Destiny — 14" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-3">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDZktwKJkZ5fLZZGOi92NIGsNe4rhrkENeAXqAgGlSqP8dwpxrD962Mnf3Pa1BGxr-Q3TlnIPbp8GzsFgp1POY0dPk9ou6455EXQ0y-TyDfA555tb0uI319fPFoz_X0oqkj6Ar_PU3jxQH3NM90expkiuPHQXfZOV3Ue3V6qktSnYYdXLysf-v71TlgutK2aPjSzBy680qbabbGlbm1yJO944vTZ0I0rO_UG1k=w1280" alt="Unwritten Destiny — 15" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-4">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCGcfc7D3ywOkGGJg6qUQZf7gQlmGU5tVgBP58XbZXeT4uQG6CLOJz9EHT0_MMWaDbZ8FUxl1IEcLVslH5Yl2uGuHdCuPIJltWgid1VMG9WLW3fMprlqq95_JXYxha0hXMGstpcSYwZZlz_gDHy1aRnIMua2QGDscoCyuzjF3xYiPg2nvCf1_PLhDmhn9LzDtOvDLi8DtBWOaNja46jh0NX59xvbJOYENDwamQ=w1280" alt="Unwritten Destiny — 16" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-5">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUBx_9-s4dnJN8X92m8YP-cfRRGg_E51DgQhlifREQ5bLDjL8IDYtfGVHZaQiuq96c25i4N_E53RQ5GYPmP6-3KAkV-2Rt2kQZEuiKiH8-8dw1g5ZWtxBcIUT4uSEtvDR9W7pQYTQdMeLEXDommx5Qd1pe94DgzVHC3cwKJIjsaEyWEuJBkQIG2-pmU3srk26K8ugDJEUbD4jyTqGUaDEqU6_X2B8ISITfJH3U4=w1280" alt="Unwritten Destiny — 17" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-6">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCa3DTpA1w-2lSkQ-2H3Srj67tNVOXReAF0adYPKpUQfyd8-yVZhWGBjj65exHXdupxQLDyTnRDvq4KPcuISvGOidrhmsWf6eKBUkwW3CrZzcI2Z2kqZv_tOVq9sltpyTK2lTLE8AraJdpieGu-KnWp8dLhmEyItSfa3UA2RCn7oijYUet5iFd4QbvHhHH-KNlNDDL0fJIifqnLNSwFbxMI51EqDHcV169TjQo=w1280" alt="Unwritten Destiny — 18" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-1">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAwPWoS9bQbhw2t9iLRl9--9AIJjZzfccVeKObk6DXI8q6zmUVbfGovtH9p7mbLDuVU8psnWuNTvZRyD0Oj4L3ceWcirJXyGCJI1N1XJ6B14spfFRrN5nk57Ne2tl7XIuwHRSUTbgCHBqfNe-HBTAqdNFwuf8GXWM3KAISPdk8J-Xriy5gYep4Z2KVXYQFHscqRKa9bdbmR78dtjWWWARaVg9S0ftyC2_=w1280" alt="Unwritten Destiny — 19" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-2">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUA8Dl85f2k_Z5W2vBxyl-vuV8iTTxmojMipR3okhBTtksk5XCjS-jUCSAiCudRjmwpkU2WlySpspK1z7ziGU3V32JlNPZzjF_yX4Hum4wLmVybHm8d5v7XYWN6mUaVxOGQxOZ3QEHs11TG_qPi7q1FO3i-ii1rkqWezr36jAwKyKU0LBIwujettXXHlcvu676tp8mdCZ1X6EbnsQZ81KBT7u1nBt5nprHXbX1U=w1280" alt="Unwritten Destiny — 20" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-3">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAZWU1pu5Dx8JphXEWweB01wwcDiDrNtxpkUaYu0Evd4vRD-Z7bvde688l58-HW7Li_zQq3Kk41ncWtKYoW0ZsKKR-qJT_fnk-gXG4w8a3YygrDd874ChfFM5xu9hcuXpdb-hoKc_qhU27SLvsM5PuE2xXGixJL8J44jmx_uB8FtpOBky59IwHf756Wogjp0mtgbk6xM77OFVWKzArmj-A7MjMWI4ARTwE=w1280" alt="Unwritten Destiny — 21" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-4">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCqSQQ_MwLL3GsCDlUGHDU64mFAqmedKat_jIxtK_i3l8kGklO3WFfsuPO05sW-0Yif6WSGCJfQN-jRy_9ODvXhtNMq1gYUMU8yd4-P0kEXGqpxNdUA4k5-B7rpXjieDt4dXxnWaqf_uZzdD48Czdjg2sExey9otK1FzT_XuA8L6h6XhE6-Yow-E6LoPHZdNW05Iepd0TNYCXHk3OZKSk7lBf2aXrjF8IAQXsM=w1280" alt="Unwritten Destiny — 22" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-5">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUBFmEVNdWCFnTgoRnLl_QWPv8j2FA0YM5MwS0cEjpcr61om3NYnXkqXiBmxfn7Ek_jz5M2aHCTyWldpKuRm1zdBb9h4IsiDdwjXnxIKnbdut5r1yQPlKyp3F7BSVgzwuRb3-wIqxz1PGPc75ND2obWGJUKyJB4chsvZHjOxeTZ-RySvVLfB_q4WxSP5pnHmTJQuO-V9qrORt6pu3pr2jjr6NYj6fwrGosE6o=w1280" alt="Unwritten Destiny — 23" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-6">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUA6aPi04NzZLzUZ-pTxbl2ySlWEOYVCdZ_2UkW-xRGr4Vv1twBNmp44CYnnJFg07hw_7G1oxzmblcrk1T6VtVKU9ZrIiOcWlL__VnQBu32DKyXWbHISjM7jRhtTkv2i2UNPNZS2COVPdxS5lih4TnJxPPaFlkEA0FP6ql_NyakZGiaYqmA71skApwVDTc6-3MuVMMm0-xrqSYThRDL8zQsTaiRufajRxID4s6g=w1280" alt="Unwritten Destiny — 24" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-1">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCnSSdA95t2YVlMMCflUSJsc0DzOXrsYjkCa-kw7qhBuShPqgiLbteBr8RCxHetXHmTlVTOjyxGo5Vls8AmZ_cmvDlRyWeaww7txq6MYpHRvx4_WJzH5MhQQXJG_iHdn0cxFpXRZaXL1jBKq39Iev7srbkAJJDCSVOozNJ5hCTaXPQylxNQifscW5tPJ6J-Nk0vyYBEyfWtzRyAzEWeIGPbR-ZYYOomXplUHlo=w1280" alt="Unwritten Destiny — 25" loading="lazy">
+        </div>
+
+      </div><!-- /.gallery-grid-large -->
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="Gallery image enlarged">
+  </div>
+
+  <nav class="project-nav">
+    <div class="project-nav-inner">
+      <a href="y2s3-p1a.html" class="pn-prev">
+        <span class="pn-label">← Previous Project</span>
+        <span class="pn-title">A Song to Drown Rivers</span>
+      </a>
+      <div class="pn-next" style="text-align:right; padding:36px 0;">
+        <span class="pn-label" style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);">End of Portfolio</span>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--stone);font-style:italic;margin-top:6px;">Thank you for viewing</div>
+      </div>
+    </div>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Rachel Chong Xin Jie — Architecture</div>
+        <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Behance</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">CV</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>

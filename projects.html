@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Projects — Rachel Chong Xin Jie</title>
+  <meta name="description" content="Complete project works by Rachel Chong Xin Jie — Year 1 & Year 2, TAR UMT Kuala Lumpur.">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    section, .projects-page { position: relative; z-index: 1; }
+
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      padding: calc(var(--nav-h) + 60px) 0 64px;
+      background: var(--charcoal);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .page-hero-deco {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(74,124,89,.06) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(74,124,89,.06) 40px);
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--pad);
+    }
+    .page-hero-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 36px;
+      transition: color .2s;
+    }
+    .page-hero-back:hover { color: var(--sand); }
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      font-weight: 500;
+      color: var(--warm-white);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+    .page-hero-title em { font-style: italic; color: var(--accent); }
+    .page-hero-sub {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* ---- YEAR/SEMESTER GROUPS ---- */
+    .projects-page { padding: 80px 0 120px; background: var(--cream); }
+    .year-group { margin-bottom: 80px; }
+    .year-group:last-child { margin-bottom: 0; }
+
+    .group-header {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 36px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .group-year {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .group-sem {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 5px;
+    }
+    .group-count {
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .12em;
+      color: rgba(122,140,110,.55);
+      margin-left: auto;
+    }
+
+    /* ---- PROJECT LISTING CARDS ---- */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .proj-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+
+    .proj-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+      display: block;
+      aspect-ratio: 4/3;
+    }
+    .proj-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .proj-card-ph {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1c2218, #2a3020 50%, #1a2e1c);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+    }
+    .proj-card-ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(74,124,89,.06) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(74,124,89,.06) 20px);
+    }
+    .proj-card-ph-icon {
+      font-size: 2rem;
+      color: rgba(74,124,89,.3);
+      position: relative;
+      z-index: 1;
+    }
+    .proj-card-ph-text {
+      font-family: var(--font-display);
+      font-size: .95rem;
+      color: rgba(200,213,185,.4);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .proj-card-bar {
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 3px;
+      background: var(--accent);
+      transition: width .4s ease;
+      z-index: 3;
+    }
+    .proj-card-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 22px 22px 18px;
+      background: linear-gradient(to top, rgba(28,34,24,.94) 40%, transparent 100%);
+      transition: background .3s;
+      z-index: 2;
+    }
+    .proj-card-code {
+      font-family: var(--font-mono);
+      font-size: .58rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--sand);
+      opacity: .55;
+      margin-bottom: 5px;
+    }
+    .proj-card-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--warm-white);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .proj-card-sub {
+      font-family: var(--font-body);
+      font-size: .88rem;
+      color: var(--sand);
+      font-style: italic;
+      opacity: .75;
+    }
+    .proj-card:hover .proj-card-img  { transform: scale(1.06); }
+    .proj-card:hover .proj-card-bar  { width: 100%; }
+    .proj-card:hover .proj-card-info { background: linear-gradient(to top, rgba(28,34,24,.98) 50%, transparent 100%); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .proj-grid { grid-template-columns: repeat(2, 1fr); }
+      .proj-grid.two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .proj-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="binary-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">R.C.X.J</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="index.html#drawings">Drawings</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-deco"></div>
+    <div class="page-hero-inner">
+      <a href="index.html" class="page-hero-back">← Back to Portfolio</a>
+      <h1 class="page-hero-title">All Project <em>Works</em></h1>
+      <p class="page-hero-sub">Year 1 &amp; Year 2 · TAR UMT · Kuala Lumpur</p>
+    </div>
+  </div>
+
+  <!-- PROJECTS LISTING -->
+  <div class="projects-page">
+    <div class="container">
+
+      <!-- ════════════════ YEAR 1 — SEMESTER 1 -->
+      <div class="year-group">
+        <div class="group-header reveal">
+          <div>
+            <div class="group-sem">Year 1 · Semester 1 · Studio I</div>
+            <div class="group-year">2023 — 2024</div>
+          </div>
+          <span class="group-count">4 Projects</span>
+        </div>
+
+        <div class="proj-grid">
+          <!-- P1 -->
+          <a href="y1s1-p1.html" class="proj-card reveal stagger-1">
+            <div class="proj-card-bar"></div>
+            <img class="proj-card-img"
+              src="https://lh3.googleusercontent.com/sitesv/AA5AbUCdlzJOYZt666Xg59-ijk1_Qz9-6btDOhwIDG65XYpeYAonRqXIu6LvbIk2hunNs0wy3rbH7kZjjP04cbsrYlW62cNOAiSLAA-SWQQmpK4KM6hWoUZh4cqgB4RQSLZQyze1mJwsLVdhNIYip2c5ogP9J8HFlPBPJ_xOgBzHT4gN8OcykjTA-YEkeVipZvkZ_6Kwh-z8ww862gnZPHXd12rygWAVoQsMS52wobw=w1280"
+              alt="Beauty of Nature — The Vibrance" loading="lazy">
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S1 · P1 · 3D Form Study</div>
+              <div class="proj-card-name">Beauty of Nature</div>
+              <div class="proj-card-sub">The Vibrance</div>
+            </div>
+          </a>
+
+          <!-- P2 -->
+          <a href="y1s1-p2.html" class="proj-card reveal stagger-2">
+            <div class="proj-card-bar"></div>
+            <img class="proj-card-img"
+              src="https://lh3.googleusercontent.com/sitesv/AA5AbUDgDo8f7hj_7QzlmGBTYHrx7Ul-EsSvzV5nU1UFOIJxRtL4rgg3-zULLlWCufBRZXfN2lkwPYopzLKcXfm4kLMcPZ5ivPkd6v5Ud3ey6RSUqB37ZG3R409ruL3585t9oQad8FK_qy67JFDkgVAfzTaz8r5SnEjYCsEqvTy4yPYeGxgLIO9bL9itCL6UnPwUPZSxQHxnA4HaM-8v8GJESeIZPN5o2Pn1hClCLe8=w1280"
+              alt="Sacred Blossom" loading="lazy">
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S1 · P2 · Sculpture</div>
+              <div class="proj-card-name">Sacred Blossom</div>
+              <div class="proj-card-sub">Light &amp; Shadow Sculpture</div>
+            </div>
+          </a>
+
+          <!-- P3A -->
+          <a href="y1s1-p3a.html" class="proj-card reveal stagger-3">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Library Thungnatapin School</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S1 · P3A · Precedent Studies</div>
+              <div class="proj-card-name">Precedent Studies</div>
+              <div class="proj-card-sub">Library Thungnatapin School</div>
+            </div>
+          </a>
+
+          <!-- P3B -->
+          <a href="y1s1-p3b.html" class="proj-card reveal stagger-4">
+            <div class="proj-card-bar"></div>
+            <img class="proj-card-img"
+              src="https://lh3.googleusercontent.com/sitesv/AA5AbUD2wITF9MgdIJanxq_pCMSOSOzxDcB5Wqnq0xpidDl0f--rkuCOg-PXkktLd9xGfmlnGl0m8gCcq-xCSO_XsEvA7Ayh9hxVMerLPp_axogAlbv674lmlTf0Fu-w71D-myRKuYSpeFHas5bulTmgCfsgxHx_r7MHMb0pu6OVNTwYtUwNYc2MbKEchBzzc4986gwKfLenUx83RV6ZrX9mCukLfPR7c_ML8Lkm=w1280"
+              alt="Spiral of Serendipity" loading="lazy">
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S1 · P3B · Pavilion</div>
+              <div class="proj-card-name">Spiral of Serendipity</div>
+              <div class="proj-card-sub">Hiatus Pavilion</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ════════════════ YEAR 1 — SEMESTER 3 -->
+      <div class="year-group">
+        <div class="group-header reveal">
+          <div>
+            <div class="group-sem">Year 1 · Semester 3 · Studio III</div>
+            <div class="group-year">2023 — 2024</div>
+          </div>
+          <span class="group-count">5 Projects</span>
+        </div>
+
+        <div class="proj-grid">
+          <!-- P1 -->
+          <a href="y1s3-p1.html" class="proj-card reveal stagger-1">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Echoes of the Spinning Rhythm</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S3 · P1 · Affiche</div>
+              <div class="proj-card-name">Affiche</div>
+              <div class="proj-card-sub">Echoes of the Spinning Rhythm</div>
+            </div>
+          </a>
+
+          <!-- P2 -->
+          <a href="y1s3-p2.html" class="proj-card reveal stagger-2">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Beatflare</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S3 · P2 · Wearable Architecture</div>
+              <div class="proj-card-name">Beatflare</div>
+              <div class="proj-card-sub">Wearable Architecture</div>
+            </div>
+          </a>
+
+          <!-- P3A -->
+          <a href="y1s3-p3a.html" class="proj-card reveal stagger-3">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Site Analysis TARUMT</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S3 · P3A · Site Analysis</div>
+              <div class="proj-card-name">Site Analysis</div>
+              <div class="proj-card-sub">TAR UMT Campus</div>
+            </div>
+          </a>
+
+          <!-- P3B -->
+          <a href="y1s3-p3b.html" class="proj-card reveal stagger-4">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Neptunia House</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S3 · P3B · Schematic Design</div>
+              <div class="proj-card-name">Neptunia House</div>
+              <div class="proj-card-sub">Schematic Design</div>
+            </div>
+          </a>
+
+          <!-- P3C -->
+          <a href="y1s3-p3c.html" class="proj-card reveal stagger-5">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Sylvan Solace</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y1S3 · P3C · Campus Retreat</div>
+              <div class="proj-card-name">Sylvan Solace</div>
+              <div class="proj-card-sub">Campus Guest Retreat</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ════════════════ YEAR 2 — SEMESTER 1 -->
+      <div class="year-group">
+        <div class="group-header reveal">
+          <div>
+            <div class="group-sem">Year 2 · Semester 1 · Studio IV</div>
+            <div class="group-year">2024 — 2025</div>
+          </div>
+          <span class="group-count">3 Projects</span>
+        </div>
+
+        <div class="proj-grid two-col">
+          <!-- P1A -->
+          <a href="y2s1-p1a.html" class="proj-card reveal stagger-1">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Weight of Harmony</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S1 · P1A · Site Analysis</div>
+              <div class="proj-card-name">Weight of Harmony</div>
+              <div class="proj-card-sub">Site Analysis — Bendang Studio</div>
+            </div>
+          </a>
+
+          <!-- P1B -->
+          <a href="y2s1-p1b.html" class="proj-card reveal stagger-2">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">Protevora</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S1 · P1B · Workers Dormitory</div>
+              <div class="proj-card-name">Protevora</div>
+              <div class="proj-card-sub">Workers Dormitory</div>
+            </div>
+          </a>
+
+          <!-- P2 -->
+          <a href="y2s1-p2.html" class="proj-card reveal stagger-3">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">PAASWE2025</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S1 · P2 · Installation</div>
+              <div class="proj-card-name">PAASWE2025</div>
+              <div class="proj-card-sub">Booth &amp; Bench Installation</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ════════════════ YEAR 2 — SEMESTER 3 -->
+      <div class="year-group">
+        <div class="group-header reveal">
+          <div>
+            <div class="group-sem">Year 2 · Semester 3 · Studio VI</div>
+            <div class="group-year">2024 — 2025</div>
+          </div>
+          <span class="group-count">3 Projects</span>
+        </div>
+
+        <div class="proj-grid two-col">
+          <!-- P1 -->
+          <a href="y2s3-p1.html" class="proj-card reveal stagger-1">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">AU5 Lembah Keramat</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S3 · P1 · Site Analysis</div>
+              <div class="proj-card-name">Site Analysis</div>
+              <div class="proj-card-sub">AU5 Lembah Keramat</div>
+            </div>
+          </a>
+
+          <!-- P1A -->
+          <a href="y2s3-p1a.html" class="proj-card reveal stagger-2">
+            <div class="proj-card-bar"></div>
+            <div class="proj-card-ph">
+              <div class="proj-card-ph-icon">◈</div>
+              <div class="proj-card-ph-text">A Song to Drown Rivers</div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S3 · P1A · Book Analysis</div>
+              <div class="proj-card-name">Book Analysis</div>
+              <div class="proj-card-sub">A Song to Drown Rivers</div>
+            </div>
+          </a>
+
+          <!-- P2 — featured -->
+          <a href="y2s3-p2.html" class="proj-card reveal stagger-3">
+            <div class="proj-card-bar"></div>
+            <img class="proj-card-img"
+              src="https://lh3.googleusercontent.com/sitesv/AA5AbUDe2M58Y_vIqZi1OD1EgMocrPyXwCIT0Of7X6crawQDq6NoRcAf2OdIpW_rBaF6PSRHseme8hADdsy5YEnkI6G9AeJei5YA-eleGe9Zv3qO3chtYW5ZvfBg05xMl41bWqxLnwjEduktQol7I91iRzC3IRZJ-SbDtbQWo5AsUGoYk1bx0BCBCKx0UrT7kMcQgexmREZjQkLjV1bAhC0Z3XgkmPWGlKR19VdR=w1280"
+              alt="Unwritten Destiny — Sungai Gisir Community Library" loading="lazy">
+            <div class="proj-card-info">
+              <div class="proj-card-code">Y2S3 · P2 · Community Library</div>
+              <div class="proj-card-name">Unwritten Destiny</div>
+              <div class="proj-card-sub">Sungai Gisir Community Library</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Rachel Chong Xin Jie — Architecture</div>
+        <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Behance</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">CV</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>
