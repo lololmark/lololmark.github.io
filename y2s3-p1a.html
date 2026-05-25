@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Song to Drown Rivers — Book Analysis · Rachel Chong Xin Jie</title>
   <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .proj-sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7c59;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(42,48,32,0.15);
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+      display: block;
+    }
+    .proj-sec-label.first { margin-top: 0; }
+    .proj-sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: #4a7c59;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .proj-sec-text {
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--body, #3a3a2a);
+    }
+    .section-img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .section-img-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .section-img-grid img:hover { transform: scale(1.02); }
+  </style>
 </head>
 <body>
   <canvas id="binary-canvas"></canvas>
@@ -31,8 +75,10 @@
   </div>
 
   <section class="project-hero">
-    <div class="project-hero-gradient"></div>
-    <div class="project-hero-deco"></div>
+    <img class="project-hero-bg"
+      src="img/projects/Year2/Sem3/y2s3p1a_1.jpg"
+      alt="Book Analysis — A Song to Drown Rivers">
+    <div class="project-hero-overlay"></div>
     <div class="project-hero-content">
       <span class="project-hero-tag">Y2S3 · Project 1A · Book Analysis</span>
       <h1 class="project-hero-title">Book Analysis</h1>
@@ -49,26 +95,25 @@
     </div>
   </div>
 
-  <div class="project-description">
-    <div class="project-description-inner">
-      <span class="desc-label reveal">Description</span>
-      <div class="desc-body reveal stagger-2">
-        <p>A book analysis of <em>A Song to Drown Rivers</em>, exploring how narrative, cultural memory, and water as metaphor can inform architectural thinking and spatial design.</p>
-        <p>The novel's layered relationship with water — as life-giver, boundary, myth, and destroyer — is read through an architectural lens. Key passages are analysed for their spatial qualities: how the author constructs scenes of enclosure and exposure, intimacy and vastness, stillness and flood.</p>
-        <p>This literary analysis directly informs the subsequent community library design, where the Sungai Gisir river becomes both site and narrative device — a flowing thread of cultural memory through the urban fabric of Lembah Keramat.</p>
+  <div class="project-gallery">
+    <div class="gallery-inner">
+
+      <!-- SECTION 1 -->
+      <span class="proj-sec-label first">Book Analysis — A Song to Drown Rivers</span>
+      <p class="proj-sec-text">As part of the design process, a selected narrative was studied and interpreted into architectural form. <em>A Song to Drown Rivers</em> by Ann Liang follows Xishi, whose life is shaped by duty, identity and sacrifice within constrained circumstances. The story is analysed and translated into architectural terms — turning narrative into a journey through space.</p>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem3/y2s3p1a_1.jpg" alt="Book Analysis — 1" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1a_2.jpg" alt="Book Analysis — 2" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1a_3.jpg" alt="Book Analysis — 3" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1a_4.jpg" alt="Book Analysis — 4" loading="lazy">
       </div>
+
     </div>
   </div>
 
-  <div class="project-gallery">
-    <div class="gallery-inner">
-      <div class="gallery-section-label reveal">Analysis Boards</div>
-      <div class="gallery-placeholder reveal stagger-2">
-        <div class="placeholder-icon">◈</div>
-        <p class="placeholder-text">Book Analysis Documentation</p>
-        <p class="placeholder-sub">Spatial diagrams &amp; narrative analysis boards</p>
-      </div>
-    </div>
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="Gallery image enlarged">
   </div>
 
   <nav class="project-nav">
@@ -91,10 +136,7 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>

@@ -5,6 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Analysis — AU5 Lembah Keramat · Rachel Chong Xin Jie</title>
   <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .proj-sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7c59;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(42,48,32,0.15);
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+      display: block;
+    }
+    .proj-sec-label.first { margin-top: 0; }
+    .proj-sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: #4a7c59;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .proj-sec-text {
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--body, #3a3a2a);
+    }
+    .content-note {
+      background: #c8d5b9;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #4a7c59;
+      border: 1px solid #7a8c6e;
+      text-transform: uppercase;
+    }
+    .section-img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .section-img-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .section-img-grid img:hover { transform: scale(1.02); }
+  </style>
 </head>
 <body>
   <canvas id="binary-canvas"></canvas>
@@ -31,8 +88,10 @@
   </div>
 
   <section class="project-hero">
-    <div class="project-hero-gradient"></div>
-    <div class="project-hero-deco"></div>
+    <img class="project-hero-bg"
+      src="img/projects/Year2/Sem3/y2s3p1_1.jpg"
+      alt="Site Analysis — AU5 Lembah Keramat">
+    <div class="project-hero-overlay"></div>
     <div class="project-hero-content">
       <span class="project-hero-tag">Y2S3 · Project 1 · Site Analysis</span>
       <h1 class="project-hero-title">Site Analysis</h1>
@@ -50,26 +109,47 @@
     </div>
   </div>
 
-  <div class="project-description">
-    <div class="project-description-inner">
-      <span class="desc-label reveal">Description</span>
-      <div class="desc-body reveal stagger-2">
-        <p>Site analysis of AU5 Lembah Keramat, investigating the urban fabric, community dynamics, river corridor, and opportunities for architectural intervention.</p>
-        <p>Lembah Keramat (Sacred Valley) is a dense mixed-use urban neighbourhood in Kuala Lumpur, bisected by the Sungai Gisir river corridor. The analysis maps layers of significance: historical settlement patterns, contemporary land use, community gathering nodes, and the ecological corridor of the river.</p>
-        <p>The study reveals tensions between the river's potential as public space and its current inaccessibility, informing the subsequent community library design that seeks to bridge neighbourhood and waterfront.</p>
+  <div class="project-gallery">
+    <div class="gallery-inner">
+
+      <!-- SECTION 1 -->
+      <span class="proj-sec-label first">Site Analysis AU5 Lembah Keramat</span>
+      <p class="proj-sec-text">The site for the Sungai Gisir Community Library is situated in Lembah Keramat, beside Sungai Gisir, a tributary of Sungai Klang. Formerly a Medan Selera, it is now a cleared site with strong potential for community use.</p>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem3/y2s3p1_1.jpg" alt="Site Analysis AU5 — 1" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_2.jpg" alt="Site Analysis AU5 — 2" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_3.jpg" alt="Site Analysis AU5 — 3" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_4.jpg" alt="Site Analysis AU5 — 4" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_5.jpg" alt="Site Analysis AU5 — 5" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_6.jpg" alt="Site Analysis AU5 — 6" loading="lazy">
       </div>
+
+      <!-- SECTION 2 -->
+      <span class="proj-sec-label">Model Images</span>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem3/y2s3p1_7.jpg" alt="Site Analysis AU5 — 7" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_8.jpg" alt="Site Analysis AU5 — 8" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_9.jpg" alt="Site Analysis AU5 — 9" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_10.jpg" alt="Site Analysis AU5 — 10" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_11.jpg" alt="Site Analysis AU5 — 11" loading="lazy">
+        <img src="img/projects/Year2/Sem3/y2s3p1_12.jpg" alt="Site Analysis AU5 — 12" loading="lazy">
+      </div>
+
+      <!-- SECTION 3 -->
+      <span class="proj-sec-label">Introductory Video</span>
+      <iframe src="https://drive.google.com/file/d/1xoKjR17GY4_QswizBOP83F8TlVbNji8d/preview" width="100%" height="480" allow="autoplay" frameborder="0" style="border:none; margin:1rem 0; display:block;"></iframe>
+
+      <!-- SECTION 4 -->
+      <span class="proj-sec-label">Site Location</span>
+      <iframe width="100%" height="400" src="https://maps.google.com/maps?ll=3.201056,101.756086&z=17&output=embed" frameborder="0" style="border:none; margin:1rem 0 1.5rem; display:block;"></iframe>
+      <p class="proj-sec-text">Lembah Keramat is a residential area in Ulu Kelang well-known for its lively street food culture and thriving local community. Before a fire seriously damaged it, Medan Selera AU5 was a well-liked community food court and social meeting place.</p>
+
     </div>
   </div>
 
-  <div class="project-gallery">
-    <div class="gallery-inner">
-      <div class="gallery-section-label reveal">Analysis Documentation</div>
-      <div class="gallery-placeholder reveal stagger-2">
-        <div class="placeholder-icon">◈</div>
-        <p class="placeholder-text">Urban Site Analysis Documentation</p>
-        <p class="placeholder-sub">Urban maps, diagrams &amp; community research</p>
-      </div>
-    </div>
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="Gallery image enlarged">
   </div>
 
   <nav class="project-nav">
@@ -92,10 +172,7 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>

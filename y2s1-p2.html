@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAASWE2025 — Booth & Bench Installation · Rachel Chong Xin Jie</title>
   <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .proj-sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7c59;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(42,48,32,0.15);
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+      display: block;
+    }
+    .proj-sec-label.first { margin-top: 0; }
+    .proj-sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: #4a7c59;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .proj-sec-text {
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--body, #3a3a2a);
+    }
+    .section-img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .section-img-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .section-img-grid img:hover { transform: scale(1.02); }
+  </style>
 </head>
 <body>
   <canvas id="binary-canvas"></canvas>
@@ -31,12 +75,14 @@
   </div>
 
   <section class="project-hero">
-    <div class="project-hero-gradient"></div>
-    <div class="project-hero-deco"></div>
+    <img class="project-hero-bg"
+      src="img/Thumbnails/PAASWE2025.jpg"
+      alt="PAASWE2025 — Booth &amp; Bench Installation">
+    <div class="project-hero-overlay"></div>
     <div class="project-hero-content">
       <span class="project-hero-tag">Y2S1 · Project 2 · Installation</span>
-      <h1 class="project-hero-title">PAASWE2025</h1>
-      <p class="project-hero-sub">Booth &amp; Bench Installation</p>
+      <h1 class="project-hero-title">Booth and Bench Installation</h1>
+      <p class="project-hero-sub">PAASWE2025 Booth &amp; Bench Installation</p>
     </div>
   </section>
 
@@ -45,30 +91,21 @@
       <div class="meta-item"><span class="meta-key">Year</span><span class="meta-val">Year 2</span></div>
       <div class="meta-item"><span class="meta-key">Semester</span><span class="meta-val">Semester 1</span></div>
       <div class="meta-item"><span class="meta-key">Type</span><span class="meta-val">Built Installation</span></div>
-      <div class="meta-item"><span class="meta-key">Course</span><span class="meta-val">Design Studio IV</span></div>
-      <div class="meta-item"><span class="meta-key">Event</span><span class="meta-val">PAASWE 2025</span></div>
-    </div>
-  </div>
-
-  <div class="project-description">
-    <div class="project-description-inner">
-      <span class="desc-label reveal">Description</span>
-      <div class="desc-body reveal stagger-2">
-        <p>A booth and bench installation designed and built for PAASWE2025, demonstrating structural ingenuity, material craft, and public space activation.</p>
-        <p>The installation moves from drawing board to physical reality through a hands-on making process — each component detailed for ease of assembly and structural integrity, each joint considered both for strength and for the visual language it contributes to the whole.</p>
-        <p>The bench and booth work together to define a semi-enclosed public zone within the exhibition, inviting visitors to pause, sit, and engage with the surrounding work. Making architecture at 1:1 scale is the most direct education in the realities of material, weight, and connection.</p>
-      </div>
+<div class="meta-item"><span class="meta-key">Event</span><span class="meta-val">PAASWE 2025</span></div>
     </div>
   </div>
 
   <div class="project-gallery">
     <div class="gallery-inner">
-      <div class="gallery-section-label reveal">Installation Documentation</div>
-      <div class="gallery-placeholder reveal stagger-2">
-        <div class="placeholder-icon">◈</div>
-        <p class="placeholder-text">Built Installation Documentation</p>
-        <p class="placeholder-sub">Construction process &amp; installation photos</p>
+
+      <!-- SECTION 1 -->
+      <span class="proj-sec-label first">Project 2 — Year 2 Semester 1 / PAASWE2025 Booth and Bench Installation</span>
+      <p class="proj-sec-text">Project 2 focuses on designing an installation of booth and bench for PAASWE 2025 under the theme 'Archipelago.' In groups, we were tasked to propose a booth design using sustainable and recycled materials as well as sponsored materials, first through sketch proposals and then a full-scale prototype. The final installation was showcased in the PAASWE 2025 student exhibition.</p>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem1/y2s1p2_1.png" alt="PAASWE2025 — 1" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p2_2.png" alt="PAASWE2025 — 2" loading="lazy">
       </div>
+
     </div>
   </div>
 
@@ -92,10 +129,7 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>

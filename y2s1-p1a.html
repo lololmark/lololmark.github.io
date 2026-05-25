@@ -5,6 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weight of Harmony — Site Analysis · Rachel Chong Xin Jie</title>
   <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .proj-sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7c59;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(42,48,32,0.15);
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+      display: block;
+    }
+    .proj-sec-label.first { margin-top: 0; }
+    .proj-sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: #4a7c59;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .proj-sec-text {
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--body, #3a3a2a);
+    }
+    .section-img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .section-img-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .section-img-grid img:hover { transform: scale(1.02); }
+    .touchstone-carousel { margin-top: 1.5rem; }
+    .carousel-viewport { position: relative; height: 500px; }
+    .carousel-slide {
+      background: #c8d5b9;
+      width: 100%;
+      height: 500px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      color: #4a7c59;
+      text-transform: uppercase;
+    }
+    .carousel-slide.active { display: flex; }
+    .carousel-prev, .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(74,124,89,0.85);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .carousel-prev { left: 1rem; }
+    .carousel-next { right: 1rem; }
+    .carousel-dots { text-align: center; margin-top: 1rem; }
+    .carousel-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #b0c4a8;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .carousel-dot.active { background: #4a7c59; }
+  </style>
 </head>
 <body>
   <canvas id="binary-canvas"></canvas>
@@ -31,8 +119,10 @@
   </div>
 
   <section class="project-hero">
-    <div class="project-hero-gradient"></div>
-    <div class="project-hero-deco"></div>
+    <img class="project-hero-bg"
+      src="img/projects/Year2/Sem1/y2s1p1_1.png"
+      alt="Weight of Harmony — Site Analysis">
+    <div class="project-hero-overlay"></div>
     <div class="project-hero-content">
       <span class="project-hero-tag">Y2S1 · Project 1A · Site Analysis</span>
       <h1 class="project-hero-title">Weight of Harmony</h1>
@@ -50,26 +140,78 @@
     </div>
   </div>
 
-  <div class="project-description">
-    <div class="project-description-inner">
-      <span class="desc-label reveal">Description</span>
-      <div class="desc-body reveal stagger-2">
-        <p>Site analysis for Bendang Studio and Touchstone — <em>Weight of Harmony</em> examines the relationship between built and natural environments in the context of an agricultural landscape.</p>
-        <p>The study maps the <em>bendang</em> (paddy field) landscape through multiple lenses: topographic variation, seasonal water levels, existing built fabric, community patterns of use, and the poetic qualities of light across open water and cultivated earth.</p>
-        <p>The analytical title — Weight of Harmony — reflects the delicate balance between human cultivation and ecological rhythm, a tension that any architectural intervention must carefully navigate.</p>
+  <div class="project-gallery">
+    <div class="gallery-inner">
+
+      <!-- SECTION 1 -->
+      <span class="proj-sec-label first">Site Analysis Board Bendang Studio</span>
+      <p class="proj-sec-text">For the first task which is Project 1A, we were brought to a site — Bendang Studio, Kampung Sungai Petai, Alor Gajah, Melaka, accessible via Lebuh AMJ. It currently houses BendangStudio's ceramics workshop with retail and a cafe. A site analysis was conducted as a class group project to analyse the site for further understanding before proceeding to the next project.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal stagger-1">
+          <img src="img/projects/Year2/Sem1/y2s1p1_1.png" alt="Weight of Harmony — 1" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-2">
+          <img src="img/projects/Year2/Sem1/y2s1p1_2.png" alt="Weight of Harmony — 2" loading="lazy">
+        </div>
+        <div class="gallery-item reveal stagger-3">
+          <img src="img/projects/Year2/Sem1/y2s1p1_3.jpeg" alt="Weight of Harmony — 3" loading="lazy">
+        </div>
       </div>
+
+      <!-- SECTION 2 -->
+      <span class="proj-sec-label">Introductory Video</span>
+      <iframe width="100%" height="480" src="https://www.youtube.com/embed/AvdxyJpzaaw" frameborder="0" allowfullscreen style="border:none; margin:2rem 0; display:block;"></iframe>
+
+      <!-- SECTION 3 -->
+      <span class="proj-sec-label">Site Location</span>
+      <iframe width="100%" height="400" src="https://maps.google.com/maps?ll=2.352287,102.206434&z=17&output=embed" frameborder="0" style="border:none; margin:1rem 0 1.5rem; display:block;"></iframe>
+      <p class="proj-sec-text">Bendang Studio, a ceramic workshop in Alor Gajah, Melaka, celebrates simplicity and traditional craftsmanship through handcrafted pottery. Surrounded by lush greenery, it serves as both a creative workspace and production hub, hosting occasional workshops and collaborations. Its rural charm and artisanal spirit make it an ideal site for design exploration.</p>
+
+      <!-- SECTION 4 -->
+      <span class="proj-sec-label">Touchstone — Weight of Harmony</span>
+      <p class="proj-sec-text">This touchstone model reflects the balance and protection between modern architecture and nature. The metal wire symbolizes architectural structures intertwined with leaf vein patterns mimicked by brown ropes — echoing nature's quiet strength. A stone placed in the centre represents living beings and balances the overall model. A curved enclosure formed with transparent strips reflects the shared protection both nature and modern architecture offer to one another.</p>
+      <div class="touchstone-carousel">
+        <div class="carousel-viewport">
+          <div class="carousel-slide active">Top View</div>
+          <div class="carousel-slide">Front Elevation</div>
+          <div class="carousel-slide">Rear Elevation</div>
+          <div class="carousel-slide">Left Elevation</div>
+          <div class="carousel-slide">Right Elevation</div>
+          <button class="carousel-prev" aria-label="Previous">←</button>
+          <button class="carousel-next" aria-label="Next">→</button>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot active"></span>
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var slides = document.querySelectorAll('.carousel-slide');
+          var dots = document.querySelectorAll('.carousel-dot');
+          var current = 0;
+          function goTo(n) {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (n + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+          }
+          document.querySelector('.carousel-prev').addEventListener('click', function() { goTo(current - 1); });
+          document.querySelector('.carousel-next').addEventListener('click', function() { goTo(current + 1); });
+          dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+        })();
+      </script>
+
     </div>
   </div>
 
-  <div class="project-gallery">
-    <div class="gallery-inner">
-      <div class="gallery-section-label reveal">Site Analysis Documents</div>
-      <div class="gallery-placeholder reveal stagger-2">
-        <div class="placeholder-icon">◈</div>
-        <p class="placeholder-text">Site Analysis Documentation</p>
-        <p class="placeholder-sub">Maps, diagrams &amp; field observations</p>
-      </div>
-    </div>
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="Gallery image enlarged">
   </div>
 
   <nav class="project-nav">
@@ -92,10 +234,7 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>

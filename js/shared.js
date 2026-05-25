@@ -132,8 +132,9 @@
   const archCanvas = document.getElementById('binary-canvas');
   if (archCanvas) {
     const aCtx        = archCanvas.getContext('2d');
-    const NODE_COUNT  = 62;
-    const CONNECT_R   = 170;  /* max distance for a line to form */
+    const isMobile    = window.innerWidth <= 768;
+    const NODE_COUNT  = isMobile ? 28 : 62;
+    const CONNECT_R   = isMobile ? 100 : 170;  /* max distance for a line to form */
     const nodes       = [];
 
     const aResize = () => {
@@ -221,5 +222,64 @@
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
   }
+
+  /* ---- 8. HAMBURGER MOBILE NAV ---- */
+  (function () {
+    var navInner = document.querySelector('.nav-inner');
+    var navLinks = document.querySelector('.nav-links');
+    if (!navInner || !navLinks) return;
+
+    /* burger button */
+    var burger = document.createElement('button');
+    burger.className = 'nav-burger';
+    burger.setAttribute('aria-label', 'Open navigation menu');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.textContent = '☰';
+    navInner.appendChild(burger);
+
+    /* full-screen overlay */
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-overlay-close';
+    closeBtn.setAttribute('aria-label', 'Close navigation menu');
+    closeBtn.textContent = '✕';
+
+    var ul = document.createElement('ul');
+    ul.className = 'nav-overlay-links';
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      var li = document.createElement('li');
+      var clone = a.cloneNode(true);
+      li.appendChild(clone);
+      ul.appendChild(li);
+    });
+
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(ul);
+    document.body.appendChild(overlay);
+
+    function openMenu() {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      burger.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      burger.setAttribute('aria-expanded', 'false');
+    }
+
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    ul.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeMenu();
+    });
+  })();
 
 })();

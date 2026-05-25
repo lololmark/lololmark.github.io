@@ -158,21 +158,63 @@
     .about-photo {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(145deg, #c8d5b9 0%, #7a8c6e 60%, #4a7c59 100%);
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+    .profile-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      display: block;
+    }
+    .profile-slide.active { opacity: 1; }
+    .profile-prev, .profile-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(28,34,24,0.55);
+      color: var(--warm-white);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      line-height: 1;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
     }
-    .about-photo-placeholder {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      color: rgba(28,34,24,.35);
-      letter-spacing: .1em;
-      text-align: center;
-      padding: 24px;
-      font-style: italic;
+    .profile-prev:hover, .profile-next:hover { background: rgba(74,124,89,0.85); }
+    .profile-prev { left: 12px; }
+    .profile-next { right: 12px; }
+    .profile-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 3;
     }
+    .profile-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(244,241,235,0.4);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .profile-dot.active { background: var(--warm-white); }
     .about-photo-badge {
       position: absolute;
       bottom: -20px;
@@ -451,11 +493,30 @@
       .contact-grid   { grid-template-columns: 1fr; }
       .form-row       { grid-template-columns: 1fr; }
     }
-    @media (max-width: 600px) {
-      .drawings-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .hero-name      { font-size: clamp(2.8rem, 10vw, 9rem); }
+      .hero-left      { padding: 4rem 1.5rem; }
+      .hero-subtitle  { font-size: 1rem; max-width: 100%; margin-bottom: 32px; }
+      .about-section, .projects-section, .drawings-section,
+      .skills-section, .education-section, .contact-section { padding: 4rem 1.5rem; }
+      .about-stats    { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
       .section-header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .featured-grid { height: auto; }
-      .project-card  { min-height: 300px; }
+      .drawings-grid  { grid-template-columns: 1fr 1fr; }
+      .featured-grid  { gap: 12px; }
+      .project-card   { min-height: 260px; }
+      .contact-title  { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+      .btn-send       { cursor: pointer; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .drawings-grid  { grid-template-columns: 1fr; }
+      .section-header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .featured-grid  { height: auto; }
+      .project-card   { min-height: 260px; }
+    }
+    @media (max-width: 480px) {
+      .hero-name      { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+      .about-stats    { grid-template-columns: 1fr; }
+      .drawings-grid  { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -624,7 +685,16 @@
         <!-- Photo -->
         <div class="about-photo-wrap reveal-left">
           <div class="about-photo">
-            <p class="about-photo-placeholder">Profile Photo<br>Rachel Chong<br>Xin Jie</p>
+            <img class="profile-slide active" src="img/profile/Pic1.png" alt="Rachel Chong Xin Jie" loading="eager">
+            <img class="profile-slide" src="img/profile/Pic2.png" alt="Rachel Chong Xin Jie" loading="lazy">
+            <img class="profile-slide" src="img/profile/Pic3.png" alt="Rachel Chong Xin Jie" loading="lazy">
+            <button class="profile-prev" aria-label="Previous photo">‹</button>
+            <button class="profile-next" aria-label="Next photo">›</button>
+            <div class="profile-dots">
+              <span class="profile-dot active"></span>
+              <span class="profile-dot"></span>
+              <span class="profile-dot"></span>
+            </div>
           </div>
           <div class="about-photo-badge">
             <span>TAR<br>UMT</span>
@@ -685,7 +755,7 @@
         <a href="y2s3-p2.html" class="project-card large reveal">
           <div class="card-accent-bar"></div>
           <img class="card-img"
-            src="https://lh3.googleusercontent.com/sitesv/AA5AbUDe2M58Y_vIqZi1OD1EgMocrPyXwCIT0Of7X6crawQDq6NoRcAf2OdIpW_rBaF6PSRHseme8hADdsy5YEnkI6G9AeJei5YA-eleGe9Zv3qO3chtYW5ZvfBg05xMl41bWqxLnwjEduktQol7I91iRzC3IRZJ-SbDtbQWo5AsUGoYk1bx0BCBCKx0UrT7kMcQgexmREZjQkLjV1bAhC0Z3XgkmPWGlKR19VdR=w1280"
+            src="img/Thumbnails/UNWRITTEN%20DESTINY.png"
             alt="Unwritten Destiny — Sungai Gisir Community Library" loading="lazy">
           <div class="card-info">
             <div class="card-sem">Y2S3 · Community Library</div>
@@ -698,7 +768,7 @@
         <a href="y1s1-p3b.html" class="project-card reveal stagger-2">
           <div class="card-accent-bar"></div>
           <img class="card-img"
-            src="https://lh3.googleusercontent.com/sitesv/AA5AbUD2wITF9MgdIJanxq_pCMSOSOzxDcB5Wqnq0xpidDl0f--rkuCOg-PXkktLd9xGfmlnGl0m8gCcq-xCSO_XsEvA7Ayh9hxVMerLPp_axogAlbv674lmlTf0Fu-w71D-myRKuYSpeFHas5bulTmgCfsgxHx_r7MHMb0pu6OVNTwYtUwNYc2MbKEchBzzc4986gwKfLenUx83RV6ZrX9mCukLfPR7c_ML8Lkm=w1280"
+            src="img/Thumbnails/SPIRALOFSERENDIPITYThumbnail.png"
             alt="Spiral of Serendipity — Hiatus Pavilion" loading="lazy">
           <div class="card-info">
             <div class="card-sem">Y1S1 · Pavilion Design</div>
@@ -711,7 +781,7 @@
         <a href="y1s1-p2.html" class="project-card reveal stagger-3">
           <div class="card-accent-bar"></div>
           <img class="card-img"
-            src="https://lh3.googleusercontent.com/sitesv/AA5AbUDgDo8f7hj_7QzlmGBTYHrx7Ul-EsSvzV5nU1UFOIJxRtL4rgg3-zULLlWCufBRZXfN2lkwPYopzLKcXfm4kLMcPZ5ivPkd6v5Ud3ey6RSUqB37ZG3R409ruL3585t9oQad8FK_qy67JFDkgVAfzTaz8r5SnEjYCsEqvTy4yPYeGxgLIO9bL9itCL6UnPwUPZSxQHxnA4HaM-8v8GJESeIZPN5o2Pn1hClCLe8=w1280"
+            src="img/Thumbnails/SacredBlossomThumbnail.png"
             alt="Sacred Blossom — Light and Shadow Sculpture" loading="lazy">
           <div class="card-info">
             <div class="card-sem">Y1S1 · Sculpture</div>
@@ -1049,15 +1119,41 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>
   </footer>
 
   <script src="js/shared.js"></script>
+  <script>
+    (function () {
+      var slides  = document.querySelectorAll('.profile-slide');
+      var dots    = document.querySelectorAll('.profile-dot');
+      var current = 0;
+      var timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 4000);
+      }
+
+      document.querySelector('.profile-prev').addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+      document.querySelector('.profile-next').addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+      });
+
+      resetTimer();
+    })();
+  </script>
 </body>
 </html>

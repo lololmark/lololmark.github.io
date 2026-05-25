@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Protevora — Workers Dormitory · Rachel Chong Xin Jie</title>
   <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .proj-sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7c59;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(42,48,32,0.15);
+      margin-bottom: 2rem;
+      margin-top: 3.5rem;
+      display: block;
+    }
+    .proj-sec-label.first { margin-top: 0; }
+    .proj-sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: #4a7c59;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .proj-sec-text {
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      color: var(--body, #3a3a2a);
+    }
+    .section-img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .section-img-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .section-img-grid img:hover { transform: scale(1.02); }
+  </style>
 </head>
 <body>
   <canvas id="binary-canvas"></canvas>
@@ -32,7 +76,7 @@
 
   <section class="project-hero">
     <img class="project-hero-bg"
-      src="https://lh3.googleusercontent.com/sitesv/AA5AbUD2wITF9MgdIJanxq_pCMSOSOzxDcB5Wqnq0xpidDl0f--rkuCOg-PXkktLd9xGfmlnGl0m8gCcq-xCSO_XsEvA7Ayh9hxVMerLPp_axogAlbv674lmlTf0Fu-w71D-myRKuYSpeFHas5bulTmgCfsgxHx_r7MHMb0pu6OVNTwYtUwNYc2MbKEchBzzc4986gwKfLenUx83RV6ZrX9mCukLfPR7c_ML8Lkm=w1280"
+      src="img/projects/Year2/Sem1/y2s1p1b_1.png"
       alt="Protevora — Workers Dormitory">
     <div class="project-hero-overlay"></div>
     <div class="project-hero-content">
@@ -52,25 +96,50 @@
     </div>
   </div>
 
-  <div class="project-description">
-    <div class="project-description-inner">
-      <span class="desc-label reveal">Description</span>
-      <div class="desc-body reveal stagger-2">
-        <p>Protevora is a workers dormitory design for Bendang Studio, addressing the needs of temporary residents through community spaces, shared amenities, and a connection to the working landscape.</p>
-        <p>The design rejects the institutional model of dormitory housing, instead proposing a village-like cluster of sleeping units linked by covered walkways and communal courtyards. The agricultural landscape is treated as a defining spatial element — visible from every unit, accessible from every shared space.</p>
-        <p>Material choices reflect the site's vernacular tradition: timber frames, terracotta roof tiles, and rammed earth walls that breathe with the tropical climate rather than fight it. The building belongs to the land it serves.</p>
-      </div>
-    </div>
-  </div>
-
   <div class="project-gallery">
     <div class="gallery-inner">
-      <div class="gallery-section-label reveal">Project Images</div>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal stagger-1">
-          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUD2wITF9MgdIJanxq_pCMSOSOzxDcB5Wqnq0xpidDl0f--rkuCOg-PXkktLd9xGfmlnGl0m8gCcq-xCSO_XsEvA7Ayh9hxVMerLPp_axogAlbv674lmlTf0Fu-w71D-myRKuYSpeFHas5bulTmgCfsgxHx_r7MHMb0pu6OVNTwYtUwNYc2MbKEchBzzc4986gwKfLenUx83RV6ZrX9mCukLfPR7c_ML8Lkm=w1280" alt="Protevora — view 1" loading="lazy">
-        </div>
+
+      <!-- SECTION 1 -->
+      <span class="proj-sec-label first">Project Drawings</span>
+      <p class="proj-sec-text">Protevora is designed with the idea of a living vessel, where architecture shelters the earth and nature, in return, lends strength to the built form. Timber frames, living plants, and woven ceramics entwine in harmony — each sustaining, each protecting, in an endless exchange of breath and life.</p>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_1.png" alt="Protevora — 1" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_2.png" alt="Protevora — 2" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_3.png" alt="Protevora — 3" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_4.png" alt="Protevora — 4" loading="lazy">
       </div>
+
+      <!-- SECTION 2 -->
+      <span class="proj-sec-label">Rendered Images</span>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_5.jpg" alt="Protevora — 5" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_6.png" alt="Protevora — 6" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_7.jpg" alt="Protevora — 7" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_8.jpg" alt="Protevora — 8" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_9.jpg" alt="Protevora — 9" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_10.jpg" alt="Protevora — 10" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_11.png" alt="Protevora — 11" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_12.png" alt="Protevora — 12" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_13.png" alt="Protevora — 13" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_14.jpg" alt="Protevora — 14" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_15.png" alt="Protevora — 15" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_16.png" alt="Protevora — 16" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_17.png" alt="Protevora — 17" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_18.jpg" alt="Protevora — 18" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_19.jpg" alt="Protevora — 19" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_20.jpg" alt="Protevora — 20" loading="lazy">
+      </div>
+
+      <!-- SECTION 3 -->
+      <span class="proj-sec-label">Model Images</span>
+      <div class="section-img-grid">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_21.jpg" alt="Protevora — 21" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_22.jpg" alt="Protevora — 22" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_23.jpg" alt="Protevora — 23" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_24.jpg" alt="Protevora — 24" loading="lazy">
+        <img src="img/projects/Year2/Sem1/y2s1p1b_25.jpg" alt="Protevora — 25" loading="lazy">
+      </div>
+
     </div>
   </div>
 
@@ -99,10 +168,7 @@
         <div class="footer-sub">TAR UMT · Kuala Lumpur · Malaysia</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="https://www.instagram.com/rxchel_05?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Rachel Chong Xin Jie | Architecture &amp; Design Portfolio</div>
     </div>
